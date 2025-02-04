@@ -4,20 +4,28 @@
   "description": "",
   "version": "0.0.1",
   "engines": {
-    "vscode": "^1.96.0"
+    "vscode": "^1.74.0"
   },
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": ["onCommand:multicurse.completeSelected"],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "multicurse.helloWorld",
-        "title": "Hello World"
+        "command": "multicurse.completeSelected",
+        "title": "Complete Selected..."
       }
-    ]
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "multicurse.completeSelected",
+          "when": "editorHasMultipleSelections"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
