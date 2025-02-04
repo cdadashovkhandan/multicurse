@@ -17,7 +17,15 @@
         "command": "multicurse.completeSelected",
         "title": "Complete Selected..."
       }
-    ]
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "multicurse.completeSelected",
+          "when": "editorHasMultipleSelections"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
